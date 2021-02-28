@@ -1,14 +1,40 @@
-h1 {
-    background-image: url(https://imgur.com/9VxHASB);
-    opacity: 0.3;
-    font size: 20px;
-    color: antiquewhite;
-    font-family: BarlowSemiCondensed-Thin;
+font-family: 'Barlow Semi Condensed', sans-serif;
 
+html {
+    background-image: url(https://imgur.com/9VxHASB) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    opacity: 0.3;
 }
 
+h1 {
+    font: 20px;
+    color: white;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+#bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+  }
+
 body {
-    background-color: #454545;
-    color: antiquewhite;
-    font-family: BarlowSemiCondensed-Thin;
+    background-color: #363334;
+    color: white;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
