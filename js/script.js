@@ -1,23 +1,23 @@
 const $name = $('#name');
 const $symbol = $('#symbol');
 const $revenueTTM = $('#revenueTTM');
-const $priceAtClose = $('#priceAtClose')
 const $input = $('input[type="text"]');
 
 let stockData, userInput;
 
 $('form').on('submit', handleGetData);
 
+const API_KEY = "EZBQRL0ZWHU5J5K3";
+
 function handleGetData(event) {
     event.preventDefault();
-   userInput = $input.val();
+    userInput = $input.val();
     $.ajax({
-         url:'https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo'
+         url:'http://www.alphavantage.co/query?function=OVERVIEW&symbol=' + userInput + '&apikey=' + API_KEY + 'units=dollars'
     //   Where I get name, symbol, and Revenue
-        }).then(
-        (data) => {
-         stockData = data;
-         render();
+        }).then((data) => {
+        console.log(data)
+        render(data);
         },
         (error) => {
          console.log('bad request', error);
@@ -25,35 +25,8 @@ function handleGetData(event) {
     ); 
 }
 
-function handleGetData(event) {
-    event.preventDefault();
-   userInput = $input.val();
-    $.ajax({
-         url:'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&outputsize=full&apikey=demo'
-    //   Where I draw daily closing price
-        }).then(
-        (data) => {
-    stockData = data;
-    render();
-   },
-   (error) => {
-    console.log('bad request', error);
-   }
-); 
-}
-
-
-
-
-
-function render() {
-    $name.text(stockData.name);
-    $symbol.text(stockData.symbol);
-    $revenueTTM.text(stockData.revenueTTM);
-    $priceAtClose.text(stockData.priceAtClose)
+function render(stockData) {
+    $name.text(stockData["Name"]);
+    $symbol.text(stockData["Symbol"]);
+    $revenueTTM.text(stockData["RevenueTTM"]);
  }
-
-//  const $name = $('#name');
-// const $symbol = $('#symbol');
-// const $revenueTTM = $('#revenueTTM');
-// const $priceAtClose = $('#priceAtClose')
