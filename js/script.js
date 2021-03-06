@@ -13,10 +13,10 @@ function handleGetData(event) {
     event.preventDefault();
     userInput = $input.val();
     $.ajax({
-         url:'http://www.alphavantage.co/query?function=OVERVIEW&symbol=' + userInput + '&apikey=' + API_KEY + 'units=dollars'
+         url:'http://www.alphavantage.co/query?function=OVERVIEW&symbol=' + userInput + '&apikey=' + API_KEY
     //   Where I get name, symbol, and Revenue
         }).then((data) => {
-        console.log(data)
+        // console.log(data)
         render(data);
         },
         (error) => {
@@ -30,3 +30,13 @@ function render(stockData) {
     $symbol.text(stockData["Symbol"]);
     $revenueTTM.text(stockData["RevenueTTM"]);
  }
+
+const btn = document.querySelector('input');
+btn.addEventListener('click', function(event) {
+    console.log(event);
+});
+
+const li = document.querySelector('li');
+li.addEventListener('click', function(event) {
+    console.log(event);
+});
