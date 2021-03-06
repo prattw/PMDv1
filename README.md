@@ -13,8 +13,6 @@
 
 ---
 
-- git init
-
 ### Outstanding issues:
 #### The <div> section text do not adjust/resize with size of the window or in mobile (see image scr:(".../img/in_mobile"))
 
@@ -26,6 +24,3 @@
 
 ### Credits:
 #### I would not have finished this project had it not been for the and patience of Yanny and videos by Alex Merced, class recording of Ira and other assorted videos from Traversy.
-
-
-
